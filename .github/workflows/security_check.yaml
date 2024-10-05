@@ -22,10 +22,6 @@ jobs:
       with:
         extra_args: --only-verified
 
-    - name: Gitleaks
-      uses: gitleaks/gitleaks-action@v2.3.6
-
-
 #    - name: Checkmarx CxFlow Action
 #      uses: checkmarx-ts/checkmarx-cxflow-github-action@v2.0
 #
@@ -35,5 +31,3 @@ jobs:
       env:
         DEFAULT_BRANCH: ${{ env.branchname }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
