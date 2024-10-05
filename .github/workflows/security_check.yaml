@@ -28,3 +28,9 @@ jobs:
 #    - name: Checkmarx DAST Github Action
 #      uses: Checkmarx/dast-github-action@v2.3.0
 
+
+    - name: Vorpal Github Action With reviewdog
+      uses: Checkmarx/vorpal-reviewdog-github-action@v1.0.0
+
+
+
