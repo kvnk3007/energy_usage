@@ -19,7 +19,7 @@ df = df[["Read Value", "Read Date and End Time"]]
 df["date"] = pd.to_datetime(df["Read Date and End Time"]).dt.date
 df = df.drop("Read Date and End Time", axis=1)
 
-print(df.head(3))
+print (df.head(3))
 
 print(df.groupby(["date"], as_index=False).sum())
 print("************* Goodbye *************")
