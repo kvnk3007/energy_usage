@@ -10,14 +10,15 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     - name : setup env
       uses: actions/setup-python@v5
       with:
         python-version: '3.12'
         cache: 'pip' # caching pip dependencies
     - run: pip install -r requirements.txt
-      with:
-        fetch-depth: 0
+
     - name: Get Branch Name
       run: |
         branchname=$(git rev-parse --abbrev-ref HEAD)
