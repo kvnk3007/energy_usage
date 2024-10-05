@@ -28,7 +28,7 @@ jobs:
 #    - name: Checkmarx DAST Github Action
 #      uses: Checkmarx/dast-github-action@v2.3.0
     - name : run app
-    - run : python ./main.py
+      run : python ./main.py
 
       env:
         DEFAULT_BRANCH: ${{ env.branchname }}
