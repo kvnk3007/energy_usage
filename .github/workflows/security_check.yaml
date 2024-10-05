@@ -1,0 +1,39 @@
+name: Security-Check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Get Branch Name
+      run: |
+        branchname=$(git rev-parse --abbrev-ref HEAD)
+        echo "branchname=$branchname" >> "$GITHUB_ENV"
+
+    - name: Secret Scanning
+      uses: trufflesecurity/trufflehog@main
+      with:
+        extra_args: --only-verified
+
+    - name: Gitleaks
+      uses: gitleaks/gitleaks-action@v2.3.6
+
+
+#    - name: Checkmarx CxFlow Action
+#      uses: checkmarx-ts/checkmarx-cxflow-github-action@v2.0
+#
+#    - name: Checkmarx DAST Github Action
+#      uses: Checkmarx/dast-github-action@v2.3.0
+
+      env:
+        DEFAULT_BRANCH: ${{ env.branchname }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
