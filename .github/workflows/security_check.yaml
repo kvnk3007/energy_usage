@@ -21,3 +21,6 @@ jobs:
       uses: trufflesecurity/trufflehog@main
       with:
         extra_args: --only-verified
+
+    - name: Checkmarx CxFlow Action
+      uses: checkmarx-ts/checkmarx-cxflow-github-action@v2.0
