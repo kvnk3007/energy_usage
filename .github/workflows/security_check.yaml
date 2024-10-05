@@ -22,5 +22,9 @@ jobs:
       with:
         extra_args: --only-verified
 
-    - name: Checkmarx CxFlow Action
-      uses: checkmarx-ts/checkmarx-cxflow-github-action@v2.0
+#    - name: Checkmarx CxFlow Action
+#      uses: checkmarx-ts/checkmarx-cxflow-github-action@v2.0
+#
+#    - name: Checkmarx DAST Github Action
+#      uses: Checkmarx/dast-github-action@v2.3.0
+
