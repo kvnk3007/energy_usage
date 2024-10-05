@@ -28,7 +28,6 @@ jobs:
 #    - name: Checkmarx DAST Github Action
 #      uses: Checkmarx/dast-github-action@v2.3.0
     - name : run app
-      run : echo test v1.0
     - run : python ./main.py
 
       env:
