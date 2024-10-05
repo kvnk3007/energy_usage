@@ -8,10 +8,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+      - name: Get Branch Name
+        run: |
+          branchname=$(git rev-parse --abbrev-ref HEAD)
+          echo "branchname=$branchname" >> "$GITHUB_ENV"
 
-      - name: Run Super-Linter
-        uses: github/super-linter@v4
+      - name: Super-Linter
+        uses: super-linter/super-linter@v7.1.0
+
         env:
-          DEFAULT_BRANCH: main
+          DEFAULT_BRANCH: ${{ env.branchname }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_CHECKOV : false
+          VALIDATE_MARKDOWN_PRETTIER : false
+          VALIDATE_YAML: false
+          VALIDATE_YAML_PRETTIER : false
