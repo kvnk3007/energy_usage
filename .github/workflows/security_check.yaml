@@ -8,12 +8,13 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     - name: Get Branch Name
       run: |
         branchname=$(git rev-parse --abbrev-ref HEAD)
         echo "branchname=$branchname" >> "$GITHUB_ENV"
-      with:
-        fetch-depth: 0
+
     - name: Secret Scanning
       uses: trufflesecurity/trufflehog@main
       with:
