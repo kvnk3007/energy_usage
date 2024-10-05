@@ -7,7 +7,7 @@ pd.set_option("display.max_columns", 500)
 pd.set_option("display.width", 1000)
 
 print("main v2")
-print("************* hello   *************\n")
+print("************* hello  **************\n")
 
 df = pd.read_csv("infiles//HDF_kW_10003448599_05-10-2024.csv")
 # print(df.head(3))
