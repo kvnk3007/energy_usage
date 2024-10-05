@@ -2,4 +2,4 @@
 
 print("hello")
 
-password = "Kevin"
+PASSWORD = "Kevin"
