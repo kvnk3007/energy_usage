@@ -1,1 +1,1 @@
-print ("main v1")
+print("main v1")
