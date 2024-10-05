@@ -11,10 +11,10 @@ print("************* hello   *************\n")
 
 df = pd.read_csv("infiles//HDF_kW_10003448599_05-10-2024.csv")
 # print(df.head(3))
-df['Read Date and End Time'] = (
-    pd.to_datetime(df['Read Date and End Time'], format='%d-%m-%Y %H:%M'))
+df["Read Date and End Time"] = pd.to_datetime(
+    df["Read Date and End Time"], format="%d-%m-%Y %H:%M")
 
-df = df[['Read Value', 'Read Date and End Time']]
+df = df[["Read Value", "Read Date and End Time"]]
 df["date"] = pd.to_datetime(df["Read Date and End Time"]).dt.date
 df = df.drop("Read Date and End Time", axis=1)
 
