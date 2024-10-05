@@ -6,6 +6,7 @@ on:
 
 jobs:
   test:
+    name : Security-Check
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
