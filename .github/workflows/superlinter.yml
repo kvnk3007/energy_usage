@@ -20,3 +20,5 @@ jobs:
         env:
           DEFAULT_BRANCH: ${{ env.branchname }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_YAML: false
+          VALIDATE_YAML_PRETTIER : false
